@@ -5,6 +5,8 @@ import Login from './pages/shared/Login';
 import Register from './pages/shared/Register';
 import Home from './pages/shared/Home';
 import './App.css';
+import DashboardParent from './pages/parent/Dashboard';
+import DashboardUser from './pages/user/Dashboard';
 
 
 
@@ -56,7 +58,7 @@ function App() {
             </a>
 
 
-            <a href="javascript: void(0)" className="focus:text-indigo-700 border-b-2 border-transparent focus:border-indigo-700 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            <a href="/dashboardparent" className="focus:text-indigo-700 border-b-2 border-transparent focus:border-indigo-700 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
               <span className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-compass" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -110,7 +112,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />          
+          <Route path="/register" element={<Register />} /> 
+          <Route path="/dashboardparent" element={<DashboardParent />} />   
+          <Route path="/dashboarduser" element={<DashboardUser />} />      
        
 
           
