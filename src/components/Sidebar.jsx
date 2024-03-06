@@ -1,60 +1,117 @@
-import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react"
-import { createContext, useContext, useState } from "react"
+import { useRef, useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useClickAway } from 'react-use';
+import { AiOutlineRollback } from 'react-icons/ai';
+import { BiHomeSmile, BiUser } from 'react-icons/bi';
+import { HiOutlineChatBubble } from 'react-icons/hi';  // Fix import statement
+import { FiSettings, FiShoppingCart } from 'react-icons/fi';
 
+export const Sidebar = () => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  useClickAway(ref, () => setOpen(false));
+  const toggleSidebar = () => setOpen((prev) => !prev);
 
-const SidebarContext = createContext();
-
-export default function Sidebar({ children }) {
-    const [expanded, setExpanded] = useState(true)
-    return (
-        <>
-            <aside className="h-screen">
-                <nav className="h-full flex flex-col bg-white border-r shadow-sm">
-                    <div className="p-4 pb-2 flex justify-between items-center">
-                        <img src={logo} className={`overflow-hidden transition-all ${expanded ? "w-32" : "w-0"}`} />
-                        <button onClick={() => setExpanded((curr) => !curr)} className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100">
-                            {expanded ? <ChevronFirst /> : <ChevronLast />}
-                        </button>
-                    </div>
-
-                    <SidebarContext.Provider value={{ expanded }}>
-
-                        <ul className="flex-1 px-3">{children}</ul>
-                    </SidebarContext.Provider>
-
-                    <div className="border-t flex p-3">
-                        <img src={profile} className="w-10 h-10 rounded-md" />
-                        <div className={`flex justify-between items-center overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"} `}>
-                            <div className="leading-4">
-                                <h4 className="font-semibold">constGenius</h4>
-                                <span className="text-xs text-gray-600">constgenius@gmail.com</span>
-                            </div>
-                            <MoreVertical size={20} />
-                        </div>
-                    </div>
-                </nav>
-            </aside>
-        </>
-    )
+  return (
+    <>
+      <button
+        onClick={toggleSidebar}
+        className="p-3 border-2 border-zinc-800 rounded-xl"
+        aria-label="toggle sidebar"
+      >
+        <GiHamburgerMenu />
+      </button>
+      <AnimatePresence mode="wait" initial={false}>
+        {open && (
+          <>
+            <motion.div
+              {...framerSidebarBackground}
+              aria-hidden="true"
+              className="fixed bottom-0 left-0 right-0 top-0 z-40 bg-[rgba(0,0,0,0.1)] backdrop-blur-sm"
+            ></motion.div>
+            <motion.div
+              {...framerSidebarPanel}
+              className="fixed top-0 bottom-0 left-0 z-50 w-full h-screen max-w-xs border-r-2 border-zinc-800 bg-zinc-900"
+              ref={ref}
+              aria-label="Sidebar"
+            >
+              <div className="flex items-center justify-between p-5 border-b-2 border-zinc-800">
+                <span>Welcome</span>
+                <button
+                  onClick={toggleSidebar}
+                  className="p-3 border-2 border-zinc-800 rounded-xl"
+                  aria-label="close sidebar"
+                >
+                  <AiOutlineRollback />
+                </button>
+              </div>
+              <ul>
+                {items.map((item, idx) => {
+                  const { title, href, Icon } = item
+                  return (
+                    <li key={title}>
+                      <a
+                        onClick={toggleSidebar}
+                        href={href}
+                        className="flex items-center justify-between gap-5 p-5 transition-all border-b-2 hover:bg-zinc-900 border-zinc-800"
+                      >
+                        <motion.span {...framerText(idx)}>{title}</motion.span>
+                        <motion.div {...framerIcon}>
+                          <Icon className="text-2xl" />
+                        </motion.div>
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  )
 }
 
-export function SidebarItem({ icon, text, active, alert }) {
-    const { expanded } = useContext(SidebarContext)
-    return (
-        <li className={`relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group ${active ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800" : "hover:bg-indigo-50 text-gray-600"}`}>
-            {icon}
-            <span className={`overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}`}>{text}</span>
-            {alert && (
-                <div className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${expanded ? "" : "top-2"}`}>
+const items = [
+  { title: 'Home', Icon: BiHomeSmile, href: '#' },
+  { title: 'About', Icon: BiUser },
+  { title: 'Contact', Icon: HiOutlineChatBubbleBottomCenterText, href: '#' },
+  { title: 'Settings', Icon: FiSettings, href: '#' },
+  { title: 'Shop', Icon: FiShoppingCart, href: '#' },
+]
 
-                </div>
-            )}
+const framerSidebarBackground = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0, transition: { delay: 0.2 } },
+  transition: { duration: 0.3 },
+}
 
-            {!expanded && (
-                <div className={`absolute left-full rounded-md px-2 py-1 ml-6 bg-indigo-100 text-indigo-800 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0`}>
-                    {text}
-                </div>
-            )}
-        </li>
-    )
+const framerSidebarPanel = {
+  initial: { x: '-100%' },
+  animate: { x: 0 },
+  exit: { x: '-100%' },
+  transition: { duration: 0.3 },
+}
+
+const framerText = delay => {
+  return {
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0 },
+    transition: {
+      delay: 0.5 + delay / 10,
+    },
+  }
+}
+
+const framerIcon = {
+  initial: { scale: 0 },
+  animate: { scale: 1 },
+  transition: {
+    type: 'spring',
+    stiffness: 260,
+    damping: 20,
+    delay: 1.5,
+  },
 }
