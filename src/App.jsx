@@ -11,6 +11,8 @@ import DashboardUser from './pages/user/Dashboard';
 
 
 
+
+
 function App() {
   return (
 
@@ -112,9 +114,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} /> 
-          <Route path="/dashboardparent" element={<DashboardParent />} />   
-          <Route path="/dashboarduser" element={<DashboardUser />} />      
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboardparent" element={<DashboardParent />} />
+          <Route path="/dashboarduser" element={<DashboardUser />} /> 
+         
        
 
           
