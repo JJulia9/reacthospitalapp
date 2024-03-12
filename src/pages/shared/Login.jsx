@@ -1,10 +1,13 @@
 import React from "react";
 import './register.css';
+import Navigation from '../../components/Navigation';
 
 
 const Login = () => {
   return (
     <>
+    <Navigation />
+
 <div className="flex h-screen">
   
   <div className="hidden lg:flex items-center justify-center flex-1 bg-white text-black">

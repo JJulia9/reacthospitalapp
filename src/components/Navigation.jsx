@@ -46,7 +46,7 @@ const Navigation = () => {
             </a>
 
 
-            <a href="/dashboardparent" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            <a href="/contact" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
               <span className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-compass" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -61,6 +61,7 @@ const Navigation = () => {
             <a href="/login" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
               <span className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-code" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  
                   <path stroke="none" d="M0 0h24v24H0z"></path>
                   <polyline points="7 8 3 12 7 16"></polyline>
                   <polyline points="17 8 21 12 17 16"></polyline>
@@ -70,12 +71,15 @@ const Navigation = () => {
               Sign In
             </a>         
            
-            <a href="/login" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            <a href="/dashboardparent" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
                   <img className="rounded-full h-10 w-10 object-cover" src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_2.png" alt="logo" />
                </a>
               
             
             </div>
+
+
+
           </div>
         
       

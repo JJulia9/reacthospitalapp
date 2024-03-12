@@ -1,6 +1,7 @@
 import React from "react";
 import hospitalImage from "../../assets/images/hospital.jpg";
 import Navigation from "../../components/Navigation";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
@@ -8,8 +9,8 @@ const Home = () => {
      <Navigation />
 
 <div className="w-screen h-screen overflow-hidden relative before:block before:absolute before:bg-black before:h-full before:w-full before:top-0 before:left-0 before:z-10 before:opacity-30">
-  <img src={hospitalImage} className="absolute top-0 left-0 min-h-full ob opacity-90" alt=""/>
-  <div className="relative z-20 max-w-screen-lg mx-auto grid grid-cols-12 h-full items-center">
+  <img src={hospitalImage} className="absolute top-0 left-0 min-h-full ob opacity-90 max-w-full" alt=""/>
+  <div className="relative z-20 max-w-7xl mx-auto grid grid-cols-12 h-full items-center">
     <div className="col-span-6">
       <span className="uppercase text-white text-xs font-bold mb-2 block">WE ARE EXPERTS</span>
       <h1 className="text-white font-extrabold text-5xl mb-8">Journey to Healing: Your Interactive Hospital Hub</h1>
@@ -23,117 +24,59 @@ const Home = () => {
     </div>
   </div>
 </div>
-<div className="bg-[#f7d0b6] py-20">
-  <div className="max-w-screen-lg mx-auto flex justify-between items-center">
+
+<div className="bg-tetriady py-20">
+  <div className="max-w-7xl mx-auto flex justify-between items-center">
     <div className="max-w-xl">
-      <h2 className="font-black text-sky-950 text-3xl mb-4">As the leading experts in this field, we're in over 90 countries</h2>
-      <p className="text-base text-sky-950">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h2 className="font-black text-sky-950 text-3xl mb-4">Learn more about your body with us  </h2>
+      <p className="text-base text-sky-950">Redirecting to the department page to see the instructions for medical treatments and blog.</p>
     </div>
-    <button className="text-sky-950 uppercase py-3 text-base px-10 border border-sky-950 hover:bg-sky-950 hover:bg-opacity-10">Get started</button>
-  </div>
-</div>
-<div className="py-12 relative overflow-hidden bg-white">
-  <div className="grid grid-cols-2 max-w-screen-lg mx-auto">
-    <div className="w-full flex flex-col items-end pr-16">
-      <h2 className="text-[#64618C] font-bold text-2xl max-w-xs text-right mb-12 mt-10">Whether you need Assistance</h2>
-      <div className="h-full mt-auto overflow-hidden relative">
-        <img src={hospitalImage}  className="h-full w-full object-contain" alt=""/>
-      </div>
-    </div>
-
-    <div className="py-20 bg-slate-100 relative before:absolute before:h-full before:w-screen before:bg-sky-950 before:top-0 before:left-0">
-      <div className="relative z-20 pl-12">
-        <h2 className="text-[#f7d0b6] font-black text-5xl leading-snug mb-10">Finpoint is here <br/>to help you</h2>
-        <p className="text-white text-sm">
-          Purus in massa tempor nec. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Faucibus ornare suspendisse sed nisi lacus sed viverra. Diam in arcu cursus euismod quis viverra nibh cras pulvinar.
-        </p>
-        <button className="mt-8 text-white uppercase py-3 text-sm px-10 border border-white hover:bg-white hover:bg-opacity-10">Talk with expert</button>
-      </div>
-    </div>
+    <button className="text-blue-900 uppercase py-3 text-blue-900 px-10 border border-blue-900  hover:bg-blue-900 hover:text-white ">Get started</button>
   </div>
 </div>
 
-<div className="py-4 relative overflow-hidden bg-white">
-  <div className="grid grid-cols-2 max-w-screen-lg mx-auto">
-    
-
-    <div className="py-20 bg-slate-100 relative before:absolute before:h-full before:w-screen before:bg-[#f7d0b6] before:top-0 before:right-0">
-      <div className="relative z-20 pl-12">
-        <h2 className="text-sky-950 font-black text-5xl leading-snug mb-10">Finpoint is here <br/>to help you</h2>
-        <p className="text-sky-950 text-sm">
-          Purus in massa tempor nec. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Faucibus ornare suspendisse sed nisi lacus sed viverra. Diam in arcu cursus euismod quis viverra nibh cras pulvinar.
-        </p>
-        <button className="mt-8 text-sky-950 uppercase py-3 text-sm px-10 border border-sky-950 hover:bg-white hover:bg-opacity-10">Talk with expert</button>
-      </div>
-    </div>
-    <div className="w-full flex flex-col pl-16">
-      <h2 className="text-[#64618C] font-bold text-2xl max-w-xs text-left mb-12 mt-10">Whether you need Assistance</h2>
-      <div className="h-full mt-auto overflow-hidden relative">
-        <img src={hospitalImage} className="h-full w-full object-contain" alt=""/>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div className="py-12 relative overflow-hidden bg-white">
-  <div className="grid grid-cols-2 max-w-screen-lg mx-auto">
-    <div className="w-full flex flex-col items-end pr-16">
-      <h2 className="text-[#64618C] font-bold text-2xl max-w-xs text-right mb-12 mt-10">Whether you need Assistance</h2>
-      <div className="h-full mt-auto overflow-hidden relative">
-        <img src="https://picsum.photos/800/600" className="h-full w-full object-contain" alt=""/>
-      </div>
-    </div>
-
-    <div className="py-20 bg-slate-100 relative before:absolute before:h-full before:w-screen before:bg-sky-950 before:top-0 before:left-0">
-      <div className="relative z-20 pl-12">
-        <h2 className="text-[#f7d0b6] font-black text-5xl leading-snug mb-10">Finpoint is here <br/>to help you</h2>
-        <p className="text-white text-sm">
-          Purus in massa tempor nec. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Faucibus ornare suspendisse sed nisi lacus sed viverra. Diam in arcu cursus euismod quis viverra nibh cras pulvinar.
-        </p>
-        <button className="mt-8 text-white uppercase py-3 text-sm px-10 border border-white hover:bg-white hover:bg-opacity-10">Talk with expert</button>
-      </div>
-    </div>
-  </div>
-</div>
-   
-
-<section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
+<section className="max-w-7xl mx-auto mt-20 my-10">
       <article>
-        <h2 className="text-2xl font-extrabold text-gray-900">BLOG</h2>
         <section className="mt-6 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8">
-          <article className="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1623479322729-28b25c16b011?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80')" }}>
+          <article className="relative w-full h-64 bg-cover bg-center group  overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1651613543604-195861551d15?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+            
+            <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+              <h3 className="text-center">
+                <a className="text-white text-2xl font-bold text-center" href="#">
+                  <span className="absolute inset-0"></span>
+                  + 109 964
+                  <br />
+                  happy patients
+                </a>
+              </h3>
+              
+            </div>
+          </article>
+          <article className="relative w-full h-64 bg-cover bg-center group overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
             <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
             <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
               <h3 className="text-center">
                 <a className="text-white text-2xl font-bold text-center" href="#">
                   <span className="absolute inset-0"></span>
-                  Top 10 highest paid programming languages of 2021
+                 +1 094
+                  <br />
+                  doctors
                 </a>
               </h3>
             </div>
           </article>
-          <article className="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1569012871812-f38ee64cd54c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')" }}>
+          <article className="relative w-full h-64 bg-cover bg-center group  overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
             <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
             <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
               <h3 className="text-center">
                 <a className="text-white text-2xl font-bold text-center" href="#">
                   <span className="absolute inset-0"></span>
-                  Python Frameworks
-                </a>
-              </h3>
-            </div>
-          </article>
-          <article className="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511376777868-611b54f68947?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80')" }}>
-            <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
-            <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
-              <h3 className="text-center">
-                <a className="text-white text-2xl font-bold text-center" href="#">
-                  <span className="absolute inset-0"></span>
-                  The best plugins for Visual Studio Code
+                  + 109 964
+                  <br />
+                  reviews
                 </a>
               </h3>
             </div>
@@ -141,6 +84,33 @@ const Home = () => {
         </section>
       </article>
     </section>
+
+
+
+<div className="py-12 relative overflow-hidden bg-white">
+  <div className="grid grid-cols-2 max-w-7xl mx-auto">
+    <div className="w-full flex flex-col items-end pr-16 ">
+      <h2 className="text-blue-900 font-bold text-2xl max-w-xs text-right mb-12 mt-10">Amusement Area</h2>
+      <div className="h-full mt-auto overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1607211851821-8be3cd6146f0?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  className="h-full w-full object-contain" alt=""/>
+      </div>
+    </div>
+    
+    <div className="py-20 bg-tetriady relative ">
+      <div className="relative z-20 pl-12">
+        <h2 className="text-blue-900 font-black text-5xl leading-snug mb-10">Our new <br/>child wing</h2>
+        <p className="text-blue-900 text-sm">
+          Purus in massa tempor nec. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Faucibus ornare suspendisse sed nisi lacus sed viverra. Diam in arcu cursus euismod quis viverra nibh cras pulvinar.
+        </p>
+        <button className="mt-8 text-blue-900 uppercase py-3 text-sm px-10 border border-blue-900 hover:bg-white hover:bg-opacity-60">Play and Learn</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+   
+
 
     <section className="bg-white py-24 px-4 lg:px-16">
       <div className="container mx-auto px-[12px] md:px-24 xl:px-12 max-w-[1300px] nanum2">
@@ -177,23 +147,9 @@ const Home = () => {
 
         <div className="relative mx-auto h-full px-4 pb-20 md:pb-10 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
 
-          <div className="absolute top-0 -right-1/4 z-0 opacity-10">
-            <svg width="800px" height="800px" viewBox="0 0 24 24"
-              className="w-96 z-0 h-full object-fill fill-g text-g" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd"
-                d="M12 6C12 5.44772 11.5523 5 11 5C10.4477 5 10 5.44772 10 6V16C10 16.5523 10.4477 17 11 17C11.5523 17 12 16.5523 12 16V6ZM9 9C9 8.44772 8.55228 8 8 8C7.44772 8 7 8.44772 7 9V16C7 16.5523 7.44772 17 8 17C8.55228 17 9 16.5523 9 16V9ZM15 9C15 8.44772 14.5523 8 14 8C13.4477 8 13 8.44772 13 9V16C13 16.5523 13.4477 17 14 17C14.5523 17 15 16.5523 15 16V9ZM18 13C18 12.4477 17.5523 12 17 12C16.4477 12 16 12.4477 16 13V16C16 16.5523 16.4477 17 17 17C17.5523 17 18 16.5523 18 16V13ZM6 15C6 14.4477 5.55228 14 5 14C4.44772 14 4 14.4477 4 15V16C4 16.5523 4.44772 17 5 17C5.55228 17 6 16.5523 6 16V15ZM21 15C21 14.4477 20.5523 14 20 14C19.4477 14 19 14.4477 19 15V16C19 16.5523 19.4477 17 20 17C20.5523 17 21 16.5523 21 16V15ZM4 18C3.44772 18 3 18.4477 3 19C3 19.5523 3.44772 20 4 20H21C21.5523 20 22 19.5523 22 19C22 18.4477 21.5523 18 21 18H4Z" />
-            </svg>
-          </div>
+    
 
-          <div className="absolute -bottom-0 -left-1/4 z-0 opacity-10">
-            <svg width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"
-              className="w-48 z-0 h-full -rotate-90 object-fill fill-r text-r">
-              <path
-                d="M32 225h12.993A4.004 4.004 0 0 0 49 220.997V138.01c0-4.976.724-5.04 1.614-.16l12.167 66.708c.397 2.177 2.516 3.942 4.713 3.942h8.512a3.937 3.937 0 0 0 3.947-4S79 127.5 80 129s14.488 52.67 14.488 52.67c.559 2.115 2.8 3.83 5.008 3.83h8.008a3.993 3.993 0 0 0 3.996-3.995v-43.506c0-4.97 1.82-5.412 4.079-.965l10.608 20.895c1.001 1.972 3.604 3.571 5.806 3.571h9.514a3.999 3.999 0 0 0 3.993-4.001v-19.49c0-4.975 2.751-6.074 6.155-2.443l6.111 6.518c1.51 1.61 4.528 2.916 6.734 2.916h7c2.21 0 5.567-.855 7.52-1.92l9.46-5.16c1.944-1.06 5.309-1.92 7.524-1.92h23.992a4.002 4.002 0 0 0 4.004-3.992v-7.516a3.996 3.996 0 0 0-4.004-3.992h-23.992c-2.211 0-5.601.823-7.564 1.834l-4.932 2.54c-4.423 2.279-12.028 3.858-16.993 3.527l2.97.198c-4.962-.33-10.942-4.12-13.356-8.467l-11.19-20.14c-1.07-1.929-3.733-3.492-5.939-3.492h-7c-2.21 0-4 1.794-4 4.001v19.49c0 4.975-1.14 5.138-2.542.382l-12.827-43.535c-.625-2.12-2.92-3.838-5.127-3.838h-8.008c-2.207 0-3.916 1.784-3.817 4.005l1.92 42.998c.221 4.969-.489 5.068-1.585.224l-15.13-66.825c-.488-2.155-2.681-3.902-4.878-3.902h-8.512a3.937 3.937 0 0 0-3.947 4s.953 77-.047 75.5-13.937-92.072-13.937-92.072C49.252 34.758 47.21 33 45 33H31.999"
-                fillRule="evenodd" />
-            </svg>
-          </div>
+        
 
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative">
             <div className="max-w-xl mx-auto text-center">
@@ -252,57 +208,8 @@ const Home = () => {
     </section>
 
 
-    
+    <Footer />
 
-<footer className="bg-white dark:bg-gray-900">
-      <div className="container px-6 py-12 mx-auto">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
-          <div className="sm:col-span-2">
-            <h1 className="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl dark:text-white">Subscribe our newsletter to get updates.</h1>
-
-            <div className="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
-              <input
-                id="email"
-                type="text"
-                className="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
-                placeholder="Email Address"
-              />
-              <button className="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
-                Subscribe
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <p className="font-semibold text-gray-800 dark:text-white">Quick Link</p>
-
-            <div className="flex flex-col items-start mt-5 space-y-2">
-              <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Home</a>
-              <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Who We Are</a>
-              <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Our Philosophy</a>
-            </div>
-          </div>
-
-          <div>
-            <p className="font-semibold text-gray-800 dark:text-white">Industries</p>
-
-            <div className="flex flex-col items-start mt-5 space-y-2">
-              <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Retail & E-Commerce</a>
-              <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Information Technology</a>
-              <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Finance & Insurance</a>
-            </div>
-          </div>
-        </div>
-
-        <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700" />
-
-        <div className="flex items-center justify-between">
-          <a href="#">
-            <img className="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt="" />
-          </a>
-        </div>
-      </div>
-    </footer>
     </>
   );
 };
