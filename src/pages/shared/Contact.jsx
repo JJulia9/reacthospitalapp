@@ -1,5 +1,6 @@
 import React from "react";
 import Navigation from "../../components/Navigation";
+import Footer from "../../components/Footer";
 
 
 const Contact = () => {
@@ -7,6 +8,8 @@ const Contact = () => {
         <>
 
 <Navigation />
+
+{/* <hr className="h-px  bg-blue-900 border-0 "/>  */}
           
 <div className="relative flex items-top justify-center min-h-screen bg-tetriady dark:bg-tetriady sm:items-center sm:pt-0">
         <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -74,6 +77,10 @@ const Contact = () => {
             </div>
         </div>
     </div>
+
+
+   
+ 
         </>
     );
 }

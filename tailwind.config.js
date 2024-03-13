@@ -9,6 +9,7 @@ module.exports = {
 
       colors: {
         'tetriady': '#E1E9F4',
+        'secondary': '#79A2E4',
       },
       
     },

@@ -3,7 +3,7 @@ import React from "react";
 const Navigation = () => {
     return (
         <>
-<div className="h-full w-full mx-6">
+<div className="h-full w-full px-6">
   
   <nav role="navigation" className="bg-white ">
   <div className="flex items-center justify-between">
@@ -35,7 +35,7 @@ const Navigation = () => {
             </a>
 
 
-            <a href="javascript: void(0)" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            <a href="/departmentPage" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
               <span className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-puzzle" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -71,9 +71,9 @@ const Navigation = () => {
               Sign In
             </a>         
            
-            <a href="/dashboardparent" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            {/* <a href="/dashboardparent" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
                   <img className="rounded-full h-10 w-10 object-cover" src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_2.png" alt="logo" />
-               </a>
+               </a> */}
               
             
             </div>
@@ -86,9 +86,8 @@ const Navigation = () => {
   </nav>
   
    
-
+</div>
   
-
 
 
 
@@ -99,7 +98,6 @@ const Navigation = () => {
 
         
 
-</div>
 
         </>
 

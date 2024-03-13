@@ -22,11 +22,17 @@ const Footer = () => {
             </div>
     
             <div className="flex flex-col items-start mt-5 space-y-2">
-              <a href="#" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Home</a>
-              <a href="#" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Departments</a>
-              <a href="#" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Amusement Area</a>
-              <a href="#" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Contact Us</a>
-              <a href="#" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Sign in</a>
+              <a href="/" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Home</a>
+              <a href="/departmentPage" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Department</a>
+              <a href="/amusement" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Amusement Area</a>
+              <a href="/contact" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Contact Us</a>
+              <a href="/login" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">Sign in</a>
+              <a href="/dashboardparent" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">DP</a>
+              <a href="/dashboarduser" className="text-grey-900 transition-colors duration-300  dark:hover:text-blue-900 hover:underline hover:text-blue-500">DU </a>
+
+
+
+
 
 
             </div>

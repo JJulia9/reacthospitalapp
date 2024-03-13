@@ -6,7 +6,7 @@ const DashboardParent = () => {
   return (
     <>
  
-    
+    <h1>Dashboard parent</h1>
     
     </>
         
