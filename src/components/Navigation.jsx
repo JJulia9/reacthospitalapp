@@ -8,7 +8,7 @@ const Navigation = () => {
   <nav role="navigation" className="bg-white ">
   <div className="flex items-center justify-between">
 
-        <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 rounded-md flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
+        <a href="/" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 rounded-md flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
           <div className="flex items-center">
             <svg id="logo" enable-background="new 0 0 300 300" height="44" viewBox="0 0 300 300" width="43" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g>
@@ -17,7 +17,7 @@ const Navigation = () => {
             </svg>
             <h2 className="hidden sm:block text-base text-gray-700 font-bold leading-normal px-3">The North</h2>
           </div>
-        </button>
+        </a>
 
         
 <div className='flex md:mr-6 xl:mr-16'>
