@@ -12,7 +12,7 @@ const Amusement = () => {
 
             <div className="max-w-xl py-5 mx-8 ">
       <h1 className="font-black text-blue-900 text-4xl mb-4">Welcome back, </h1>
-                  <p className="text-base text-xl text-[#374151]">Please choose a profile to find more information</p>
+                  <p className="text-base text-l text-[#374151]">Play to learn about you body and win monthly prizes from The North</p>
             </div>
             
     <section className="bg-tetriady">
@@ -23,7 +23,7 @@ const Amusement = () => {
              
                
             </div>
-            <div className="grid grid-cols-1 gap-2 mt-12 sm:grid-cols-3 lg:mt-20">
+            <div className="grid grid-cols-1 gap-2 mt-12 sm:grid-cols-3 lg:mt-6">
            
             {gameData.map((game, index) => (
             <CardAmusement 
