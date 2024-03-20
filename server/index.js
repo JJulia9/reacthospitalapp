@@ -1,243 +1,3 @@
-// const express = require('express');
-// const mongoose = require('mongoose');
-// const cors = require('cors');
-// const bcrypt = require('bcryptjs');
-// const jwt = require('jsonwebtoken');
-// require('dotenv').config();
-// const User = require('./model/User');
-// require('./model/Department');
-
-// const app = express();
-// const PORT = process.env.PORT || 5000;
-
-// app.use(express.json());
-// app.use(cors());
-
-// const MONGO_URI = process.env.MONGO_URI;
-// mongoose.connect(MONGO_URI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-    
-//     });
-
-//     mongoose.connection.on('connected', () => {
-//         console.log('MongoDB connected');
-//     });
-
-
-//    app.get('/api/users', async (req, res) => {
-//     try{
-//         const token = req.headers.authorization.split(' ')[1];
-
-//         if(!token){
-//              return res.status(401).json({message: 'Auth Error'});         
-//     }
-    
-//     jwt.verify(token, 'your-secret-key', async (err, decoded) => {
-//         if(err){
-//             return res.status(401).json({message: 'Auth Error'});
-//         }
-//         const users = await User.findById(decoded.user.Id).populate('department_id').populate('doctor_id');
-        
-
-//         if(!users){
-//             return res.status(404).json({message: 'User not found'});
-//         }
-
-
-// const formattedUser={
-//     _id: users._id,
-//     email: users.email,
-//     forename: users.forename,
-//     surname: users.surname,
-//     guardian: users.guardian,
-//     guardian_name: users.guardian_name,
-//     dob: users.dob,
-//     patient_number: users.patient_number,
-//     appointment_date: users.appointment_date,
-//     appointment_notes: users.appointment_notes,
-//     notes: users.notes,
-//     photo: users.photo,
-
-//     department_id: users.department_id ? {
-//         name: users.department_id.name,
-//         details: users.department_id.details,
-//         doctor_id: users.department_id.doctor_id,
-//         doctor_img: users.department_id.doctor_img,
-//         nurse: users.department_id.nurse,
-//         nurse_img: users.department_id.nurse_img,
-//         map: users.department_id.map,
-//         phone: users.department_id.phone,
-//     } : null,
-
-//     doctor_id: users.doctor_id ? {
-//         name: users.doctor_id.name,
-//         speciality: users.doctor_id.speciality,
-//         department_id: users.doctor_id.department_id,
-//         contact: users.doctor_id.contact,
-//     } : null,
-
-// };
-
-// res.json(formattedUser);
-//     });
-
-// }catch(err){
-//     console.error(error);
-//     res.status(500).json({message: 'Internal Server Error'});
-// }
-// });
-
-// app.post('/api/login', async (req, res) => {
-//     try{
-//         const {patient_number, password} = req.body;
-//         const user = await User.findOne({patient_number});
-
-//         if(!user){
-//             return res.status(400).json({message: 'Invalid Credentials'});
-//         }
-
-//         const passwordMatch = await bcrypt.compare(password, user.password);
-
-//         if(!passwordMatch){
-//             return res.status(401).json({message: 'Invalid Credentials'});
-//         }
-
-//         const tokenPayload = {
-//             userId: user._id,
-//     };
-
-//     const token = jwt.sign(tokenPayload, 'your-secret-key', {expiresIn: '1h'});
-
-//     res.json({token});
-// }catch(error){
-//     console.error(error);
-//     res.status(500).json({error: 'Internal Server Error'});
-// }
-// });
-
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
-
-// const express = require('express');
-// const mongoose = require('mongoose');
-// const cors = require('cors');
-// const bcrypt = require('bcryptjs');
-// const jwt = require('jsonwebtoken');
-// require('dotenv').config();
-// const User = require('./model/User');
-// require('./model/Department');
-
-// const app = express();
-// const PORT = process.env.PORT || 5000;
-
-// app.use(express.json());
-// app.use(cors());
-
-// const MONGO_URI = process.env.MONGO_URI;
-// mongoose.connect(MONGO_URI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// });
-
-// mongoose.connection.on('connected', () => {
-//     console.log('MongoDB connected');
-// });
-
-// app.get('/api/users', async (req, res) => {
-//     try {
-//         const token = req.headers.authorization.split(' ')[1];
-
-//         if (!token) {
-//             return res.status(401).json({ message: 'Auth Error' });
-//         }
-
-//         jwt.verify(token, 'your-secret-key', async (err, decoded) => {
-//             if (err) {
-//                 return res.status(401).json({ message: 'Auth Error' });
-//             }
-//             const users = await User.findById(decoded.user.Id).populate('department_id').populate('doctor_id');
-
-//             if (!users) {
-//                 return res.status(404).json({ message: 'User not found' });
-//             }
-
-//             const formattedUser = {
-//                 _id: users._id,
-//                 email: users.email,
-//                 forename: users.forename,
-//                 surname: users.surname,
-//                 guardian: users.guardian,
-//                 guardian_name: users.guardian_name,
-//                 dob: users.dob,
-//                 patient_number: users.patient_number,
-//                 appointment_date: users.appointment_date,
-//                 appointment_notes: users.appointment_notes,
-//                 notes: users.notes,
-//                 photo: users.photo,
-
-//                 department_id: users.department_id ? {
-//                     name: users.department_id.name,
-//                     details: users.department_id.details,
-//                     doctor_id: users.department_id.doctor_id,
-//                     doctor_img: users.department_id.doctor_img,
-//                     nurse: users.department_id.nurse,
-//                     nurse_img: users.department_id.nurse_img,
-//                     map: users.department_id.map,
-//                     phone: users.department_id.phone,
-//                 } : null,
-
-//                 doctor_id: users.doctor_id ? {
-//                     name: users.doctor_id.name,
-//                     speciality: users.doctor_id.speciality,
-//                     department_id: users.doctor_id.department_id,
-//                     contact: users.doctor_id.contact,
-//                 } : null,
-//             };
-
-//             res.json(formattedUser);
-//         });
-
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).json({ message: 'Internal Server Error' });
-//     }
-// });
-
-// app.post('/api/login', async (req, res) => {
-//     try {
-//         const { patient_number, password } = req.body;
-//         const user = await User.findOne({ patient_number });
-
-//         if (!user) {
-//             return res.status(400).json({ message: 'Invalid Credentials' });
-//         }
-
-//         const passwordMatch = await bcrypt.compare(password, user.password);
-
-//         if (!passwordMatch) {
-//             return res.status(401).json({ message: 'Invalid Credentials' });
-//         }
-
-//         const tokenPayload = {
-//             userId: user._id,
-//         };
-
-//         const token = jwt.sign(tokenPayload, 'your-secret-key', { expiresIn: '1h' });
-
-//         res.json({ token });
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ error: 'Internal Server Error' });
-//     }
-// });
-
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
-
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -294,31 +54,38 @@ app.get('/api/users', async (req, res) => {
 
       // Return data only for the authenticated user
     // Inside the /api/users route
-const formattedUser = {
-  _id: user._id,
-  email: user.email,
-  forename: user.forename,
-  surname: user.surname,
-  guardian: user.guardian, // Add this line
-  guardian_name: user.guardian_name,
-  notes: user.notes, 
-  dob: user.dob,
-  patient_number: user.patient_number,
-  appointment_date: user.appointment_date,
-  appointment_notes: user.appointment_notes,
-  department_id: user.department_id ? {
-    name: user.department_id.name,
-    details: user.department_id.details,
-    consultant: user.department_id.consultant,
-    nurse: user.department_id.nurse,
-    consultant_img: user.department_id.consultant_img,
-    nurse_img: user.department_id.nurse_img,
-    img_one: user.department_id.img_one,
-    img_two: user.department_id.img_two,
-    img_three: user.department_id.img_three,
-    map: user.department_id.map,
-    // Add other department fields as needed
-  } : null,
+            const formattedUser = {
+                _id: user._id,
+                email: user.email,
+                forename: user.forename,
+                surname: user.surname,
+                guardian: user.guardian,
+                guardian_name: user.guardian_name,
+                dob: user.dob,
+                patient_number: user.patient_number,
+                appointment_date: user.appointment_date,
+                appointment_notes: user.appointment_notes,
+                notes: user.notes,
+                photo: user.photo,
+
+                department_id: user.department_id ? {
+                    name: user.department_id.name,
+                    details: user.department_id.details,
+                    doctor_id: user.department_id.doctor_id,
+                    doctor_img: user.department_id.doctor_img,
+                    nurse: user.department_id.nurse,
+                    nurse_img: user.department_id.nurse_img,
+                    map: user.department_id.map,
+                    phone: user.department_id.phone,
+                } : null,
+
+                doctor_id: user.doctor_id ? {
+                    name: user.doctor_id.name,
+                    speciality: user.doctor_id.speciality,
+                    department_id: user.doctor_id.department_id,
+                    contact: user.doctor_id.contact,
+                } : null,
+
   
   
   // Add any additional fields you want to include
@@ -370,3 +137,47 @@ app.post('/api/login', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+
+
+
+//trying to make register page 
+
+// User Registration Endpoint
+app.post('/api/register', async (req, res) => {
+    try {
+      // Extract registration data from request body
+      const { email, password, forename, surname, dob, patient_number } = req.body;
+  
+      // Check if the user already exists
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        return res.status(400).json({ error: 'User already exists' });
+      }
+  
+      // Hash the password
+      const hashedPassword = await bcrypt.hash(password, 10);
+  
+      // Create a new user document
+      const newUser = new User({
+        email,
+        password: hashedPassword,
+        forename,
+        surname,
+        dob,
+        patient_number
+        // Add any additional fields as needed
+      });
+  
+      // Save the new user document to the database
+      await newUser.save();
+  
+      // Respond with success message
+      res.status(201).json({ message: 'User registered successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+  

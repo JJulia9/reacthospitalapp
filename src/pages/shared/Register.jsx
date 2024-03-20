@@ -1,21 +1,38 @@
 import React from "react";
 import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState } from 'react';
+
+
+
 
 const Register = () => {
-  const [patient_number, setPatient_number] = useState("");
-  const [password, setPassword] = useState("");
-  const [parent, setParent] = useState(false); // Set initial value to false
-  const navigate = useNavigate();
+ 
+    const [forename, setForename] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    
+
+  
+    const handleRegister = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await axios.post("http://localhost:5000/api/register", {
+          forename,
+          email,
+          password,
+        });
 
 
+        console.log("Registration successful");
+        // Handle redirection or display a success message
+        window.location.href = '/login';
 
-
-async function register(e) {
- e.preventDefault();
-}
-
-
+      } catch (error) {
+        console.error("Registration failed", error.response.data.error);
+        // Handle error display
+      }
+    }
+    
   return (
     <>
 
@@ -100,57 +117,60 @@ async function register(e) {
       <h1 className="text-3xl font-semibold mb-6 text-blue-900 text-center">Sign Up</h1>
       <form  method="POST" className="space-y-4">
 
+     
+        
       <div>
-                    <label 
-                    htmlFor="patient_number" 
-                    className="block text-sm font-medium text-gray-700">Patient Number</label>
-
-
-                    <input 
-                    type="tel" 
-                    id="patient_number" 
-                    name="patient_number" 
-                    value={patient_number} 
-
-                        onChange={(e) => setPatient_number(e.target.value)}
-                       
-                        className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
-                    />
-                </div>
-                <div>
-
-                    <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-                   
-                    <input 
-                    type="password" 
-                    id="password" 
-                    name="password" 
-                    value={password}
-                        
-                    onChange={(e) => setPassword(e.target.value)}
-
-                        className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
-                    />
-                </div>
-                <div>
-                    <button type="submit" onClick={handleLogin} className="w-full bg-blue-900 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign In</button>
-                </div>
-{/*         
-        <div>
-          <label for="username" className="block text-sm font-medium text-gray-700">Username</label>
-          <input type="text" id="username" name="username" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+          <label
+            htmlFor="forename"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Forename
+          </label>
+          <input
+            type="text"
+            id="forename"
+            name="forename"
+            value={forename}
+            onChange={(e) => setForename(e.target.value)}
+            className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
+          />
         </div>
         <div>
-          <label for="email" className="block text-sm font-medium text-gray-700">Email</label>
-          <input type="text" id="email" name="email" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
+          />
         </div>
         <div>
-          <label for="password" className="block text-sm font-medium text-gray-700">Password</label>
-          <input type="password" id="password" name="password" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/> */}
-        {/* </div>
+          <label
+            htmlFor="password"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
+          />
+        </div>
         <div>
-          <button type="submit" className="w-full bg-blue-900 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign Up</button>
-        </div> */}
+
+          <button type="submit" onClick={handleRegister} className="w-full bg-blue-900 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign Up</button>
+        </div>
       </form>
       <div className="mt-4 text-sm text-gray-600 text-center">
         <p>Already have an account? <a href="/login" className="text-black hover:underline">Login here</a>

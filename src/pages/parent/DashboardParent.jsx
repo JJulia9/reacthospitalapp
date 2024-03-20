@@ -13,16 +13,12 @@ import Profile from "../../components/Profile";
 const DashboardParent = () => {
   return (
     <>
-
- 
  
     <div className="max-w-xl py-5 mx-8">
       <h1 className="font-black text-blue-900 text-4xl mb-4">Welcome back, </h1>
       <p className="text-base text-xl text-[#374151]">Please choose a profile to find more information</p>
     </div>
- 
-
- 
+  
 
   <div className="bg-tetriady w-full h-screen">
 

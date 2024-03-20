@@ -3,46 +3,84 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
+// const Login = () => {
+//     const [patient_number, setPatient_number] = useState("");
+//     const [password, setPassword] = useState("");
+//     const [parent, setParent] = useState(false); // Set initial value to false
+//     const navigate = useNavigate();
+
+//     const handleLogin = async (e) => {
+//         e.preventDefault();
+//         try {   
+//             const response = await axios.post("http://localhost:5000/api/login", {
+//                 patient_number,
+//                 password
+//             });
+
+//             console.log('Login successful');
+//             console.log('Token:', response.data.token);
+
+//             localStorage.setItem("token", response.data.token);
+//             localStorage.setItem("patient_number", response.data.patient_number);
+
+//             if (parent) {
+//                 localStorage.setItem("parent", 'true');
+//                 navigate("/dashboardparent");
+//             } else {
+//                 localStorage.removeItem("parent");
+//                 navigate("/dashboarduser");
+//             }
+//         } catch (error) {
+//             console.error('Login failed', error.response.data.error);
+//         }
+//     };
+
+//     useEffect(() => {
+//         const storedParent = localStorage.getItem("parent");
+//         if (storedParent) {
+//             setParent(true);
+//         }
+//     }, []);
+
+
 const Login = () => {
-    const [patient_number, setPatient_number] = useState("");
-    const [password, setPassword] = useState("");
-    const [parent, setParent] = useState(false); // Set initial value to false
-    const navigate = useNavigate();
+const [email, setEmail] = useState(""); // Changed to email
+const [password, setPassword] = useState("");
+const [parent, setParent] = useState(false);
+const navigate = useNavigate();
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        try {   
-            const response = await axios.post("http://localhost:5000/api/login", {
-                patient_number,
-                password
-            });
+const handleLogin = async (e) => {
+    e.preventDefault();
+    try {   
+        const response = await axios.post("http://localhost:5000/api/login", {
+            email, // Use email instead of patient_number
+            password
+        });
 
-            console.log('Login successful');
-            console.log('Token:', response.data.token);
+        console.log('Login successful');
+        console.log('Token:', response.data.token);
 
-            localStorage.setItem("token", response.data.token);
-            localStorage.setItem("patient_number", response.data.patient_number);
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("email", email); // Store email instead of patient_number
 
-            if (parent) {
-                localStorage.setItem("parent", 'true');
-                navigate("/dashboardparent");
-            } else {
-                localStorage.removeItem("parent");
-                navigate("/dashboarduser");
-            }
-        } catch (error) {
-            console.error('Login failed', error.response.data.error);
+        if (parent) {
+            localStorage.setItem("parent", 'true');
+            navigate("/dashboardparent");
+        } else {
+            localStorage.removeItem("parent");
+            navigate("/dashboarduser");
         }
-    };
+    } catch (error) {
+        console.error('Login failed', error.response.data.error);
+    }
+};
 
-    useEffect(() => {
-        const storedParent = localStorage.getItem("parent");
-        if (storedParent) {
-            setParent(true);
-        }
-    }, []);
-
-
+useEffect(() => {
+    const storedParent = localStorage.getItem("parent");
+    if (storedParent) {
+        setParent(true);
+    }
+}, []);
 
   return (
     <>
@@ -130,7 +168,8 @@ const Login = () => {
  
       <form action="POST" className="space-y-4">
         
-      <div>
+
+      {/* <div>
                     <label 
                     htmlFor="patient_number" 
                     className="block text-sm font-medium text-gray-700">Patient Number</label>
@@ -144,6 +183,18 @@ const Login = () => {
 
                         onChange={(e) => setPatient_number(e.target.value)}
                        
+                        className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
+                    />
+                </div> */}
+
+
+<div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)} 
                         className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
                     />
                 </div>
