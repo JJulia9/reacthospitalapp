@@ -25,7 +25,7 @@ const DashboardUser = () => {
   <div className="bg-tetriady w-full h-screen">
   <PSubnav />
   <ProfileCard />
-  <h3 className="text-blue-900 text-xl font-medium max-w-xl mx-8"> Did you know... {user.notes}</h3>
+  <h3 className="text-blue-900 text-xl font-medium max-w-xl mx-8"> Did you know...</h3>
 
   <section className=" py-24 px-4 ">
         <div className="container mx-auto px-[12px] md:px-24 xl:px-12 max-w-[1300px] nanum2">

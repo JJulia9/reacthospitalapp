@@ -4,7 +4,17 @@ import Appointments from "./Appointments";
 import { Routes, Route } from 'react-router-dom';
 
 
+
+
 const PSubnav = () => {
+
+    const handleLogout = () => {
+        // Clear token from local storage
+        localStorage.removeItem("token");
+        // Redirect user to the login page
+        window.location.href = '/login';
+        };
+
     return (
         <>
           
@@ -34,9 +44,9 @@ const PSubnav = () => {
                 Progress
             </a>
 
-            <a href="#" className="text-blue-900 font-medium  border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5  hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
-                Log out
-            </a>
+            <button onClick={handleLogout} className="text-blue-900 font-medium  border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5  hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+    Log out
+</button>
 
 
 
