@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import CardDepartment from "../../components/CardDepartment";
 
@@ -8,7 +7,6 @@ import CardDepartment from "../../components/CardDepartment";
 const Department = () => {
     return (
         <>
-        <Navigation />
        
    
  <section className="bg-white">

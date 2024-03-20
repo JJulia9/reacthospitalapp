@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from "../../components/Navigation";
 import PSubnav from "../../components/PSubnav";
 import ProfileCard from "../../components/ProfileCard";
 import Facts from "../../components/Facts";
@@ -9,7 +8,7 @@ import Facts from "../../components/Facts";
 const DashboardUser = () => {
     return (
 <>
-  <Navigation />
+  
  
     <div className="max-w-xl py-5 mx-8">
       <h1 className="font-black text-blue-900 text-4xl mb-4">Welcome back, </h1>
