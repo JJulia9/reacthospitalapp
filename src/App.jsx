@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/shared/Login';
 import Register from './pages/shared/Register';
 import Home from './pages/shared/Home';
@@ -9,7 +9,6 @@ import DashboardUser from './pages/user/DashboardUser';
 import Contact from './pages/shared/Contact';
 import DepartmentPage from './pages/shared/Department';
 import Amusement from './pages/user/Amusement';
-
 import Navigation from './components/Navigation';
 
 

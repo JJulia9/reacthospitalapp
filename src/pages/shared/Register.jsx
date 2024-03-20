@@ -1,6 +1,21 @@
 import React from "react";
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Register = () => {
+  const [patient_number, setPatient_number] = useState("");
+  const [password, setPassword] = useState("");
+  const [parent, setParent] = useState(false); // Set initial value to false
+  const navigate = useNavigate();
+
+
+
+
+async function register(e) {
+ e.preventDefault();
+}
+
+
   return (
     <>
 
@@ -83,8 +98,44 @@ const Register = () => {
   <div className="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center">
     <div className="max-w-md w-full p-6">
       <h1 className="text-3xl font-semibold mb-6 text-blue-900 text-center">Sign Up</h1>
-      <form action="#" method="POST" className="space-y-4">
-        
+      <form  method="POST" className="space-y-4">
+
+      <div>
+                    <label 
+                    htmlFor="patient_number" 
+                    className="block text-sm font-medium text-gray-700">Patient Number</label>
+
+
+                    <input 
+                    type="tel" 
+                    id="patient_number" 
+                    name="patient_number" 
+                    value={patient_number} 
+
+                        onChange={(e) => setPatient_number(e.target.value)}
+                       
+                        className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
+                    />
+                </div>
+                <div>
+
+                    <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+                   
+                    <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    value={password}
+                        
+                    onChange={(e) => setPassword(e.target.value)}
+
+                        className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
+                    />
+                </div>
+                <div>
+                    <button type="submit" onClick={handleLogin} className="w-full bg-blue-900 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign In</button>
+                </div>
+{/*         
         <div>
           <label for="username" className="block text-sm font-medium text-gray-700">Username</label>
           <input type="text" id="username" name="username" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
@@ -95,11 +146,11 @@ const Register = () => {
         </div>
         <div>
           <label for="password" className="block text-sm font-medium text-gray-700">Password</label>
-          <input type="password" id="password" name="password" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
-        </div>
+          <input type="password" id="password" name="password" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/> */}
+        {/* </div>
         <div>
           <button type="submit" className="w-full bg-blue-900 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign Up</button>
-        </div>
+        </div> */}
       </form>
       <div className="mt-4 text-sm text-gray-600 text-center">
         <p>Already have an account? <a href="/login" className="text-black hover:underline">Login here</a>

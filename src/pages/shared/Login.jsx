@@ -14,7 +14,7 @@ const Login = () => {
         try {   
             const response = await axios.post("http://localhost:5000/api/login", {
                 patient_number,
-                password,
+                password
             });
 
             console.log('Login successful');
@@ -128,19 +128,37 @@ const Login = () => {
 
       
  
-      <form  className="space-y-4">
+      <form action="POST" className="space-y-4">
         
       <div>
-                    <label htmlFor="patient_number" className="block text-sm font-medium text-gray-700">Patient Number</label>
-                    <input type="tel" id="patient_number" name="patient_number" value={patient_number} 
+                    <label 
+                    htmlFor="patient_number" 
+                    className="block text-sm font-medium text-gray-700">Patient Number</label>
+
+
+                    <input 
+                    type="tel" 
+                    id="patient_number" 
+                    name="patient_number" 
+                    value={patient_number} 
+
                         onChange={(e) => setPatient_number(e.target.value)}
+                       
                         className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
                     />
                 </div>
                 <div>
+
                     <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-                    <input type="password" id="password" name="password" value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                   
+                    <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    value={password}
+                        
+                    onChange={(e) => setPassword(e.target.value)}
+
                         className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
                     />
                 </div>
