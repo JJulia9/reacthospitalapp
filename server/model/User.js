@@ -13,8 +13,10 @@ const userSchema = new mongoose.Schema({
     appointment_date: Date,
     appointment_notes: String,
     photo: String,
+    patient_number: Number,
     department_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Department'},
     doctor_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Doctor'},
+   
 
 
 });

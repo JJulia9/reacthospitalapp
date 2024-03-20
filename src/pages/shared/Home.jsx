@@ -2,9 +2,11 @@ import React from "react";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 
+
 const Home = () => {
   return (
     <>
+   
      <Navigation />
 
 <div className="w-full h-screen overflow-hidden relative before:block before:absolute before:bg-black before:h-full before:w-full before:top-0 before:left-0 before:z-10 before:opacity-30">

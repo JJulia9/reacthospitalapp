@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
     return (
@@ -21,7 +22,7 @@ const Navigation = () => {
 
         
 <div className='flex md:mr-6 xl:mr-16'>
-            <a href="/" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            <Link to="/" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
               <span className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-grid" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -32,10 +33,10 @@ const Navigation = () => {
                 </svg>
               </span>
               Home
-            </a>
+            </Link>
 
 
-            <a href="/departmentPage" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            <Link to="/departmentPage" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
               <span className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-puzzle" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -43,10 +44,10 @@ const Navigation = () => {
                 </svg>
               </span>
               Department
-            </a>
+            </Link>
 
 
-            <a href="/contact" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            <Link to="/contact" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
               <span className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-compass" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -55,10 +56,10 @@ const Navigation = () => {
                 </svg>
               </span>
               Contact Us
-            </a>
+            </Link>
 
 
-            <a href="/login" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            <Link to="/login" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
               <span className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-code" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   
@@ -69,7 +70,9 @@ const Navigation = () => {
                 </svg>
               </span>
               Sign In
-            </a>         
+            </Link>         
+           
+
            
             {/* <a href="/dashboardparent" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
                   <img className="rounded-full h-10 w-10 object-cover" src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_2.png" alt="logo" />

@@ -10,6 +10,9 @@ import Contact from './pages/shared/Contact';
 import DepartmentPage from './pages/shared/Department';
 import Amusement from './pages/user/Amusement';
 
+import Navigation from './components/Navigation';
+
+
 
 
 
@@ -22,6 +25,13 @@ function App() {
 
     <Router>
      
+
+<Navigation />
+
+
+
+
+
         <main>
         <Routes>
           <Route path="/" element={<Home />} />

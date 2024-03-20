@@ -1,9 +1,58 @@
 import React from "react";
+import {useState, useEffect} from "react"; //one to change a variable and the other to get the data
+import axios from 'axios'; // speak to the backend
+import {useNavigate} from 'react-router-dom'; // to navigate to another page
 import './register.css';
 import Navigation from '../../components/Navigation';
 
 
 const Login = () => {
+    // create a state variable to store the data
+    const [patient_number, setPatientNumber] = useState("");
+    const [password, setPassword] = useState("");
+    const [parent, setParent] = useState("");
+    const navigate = useNavigate();
+
+    const handleLogin = async (e) => {
+      try{
+        e.preventDefault();
+        const response = await axios.post("http://localhost:5000/api/login", {
+          patient_number,
+          password,
+        });
+
+        console.log('Login successful');
+        console.log('Token:', response.data.token);
+
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("patient_number", response.data.patient_number);
+
+        if(parent){
+          localStorage.setItem("parent", 'true');
+        } else{
+          localStorage.removeItem("parent");
+        }
+
+        if(parent){
+          navigate("/dashboardparent");
+      }else{
+           navigate("/dashboarduser");
+      }
+    }catch (error){
+      console.error('Login failed', error.response.data.error);
+    }
+    };
+
+    useEffect(() => {
+      const storedParent = localStorage.getItem("parent");
+      if(storedParent){
+        setParent(true);
+      }
+
+    }, []);
+
+
+
   return (
     <>
     <Navigation />
@@ -88,16 +137,31 @@ const Login = () => {
       <h1 className="text-3xl font-semibold mb-6 text-blue-900 text-center">Sign In</h1>
       <form action="#" method="POST" className="space-y-4">
         
-        <div>
+        {/* <div>
           <label for="email" className="block text-sm font-medium text-gray-700">Email</label>
           <input type="text" id="email" name="email" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+        </div> */}
+
+        <div>
+          <label for="patient_id" className="block text-sm font-medium text-gray-700">Patient id</label>
+          <input type="tel" id="patient_id" name="patient_id"  value={patient_number} 
+          onChange = {(e) => setPatient_number(e.target.value)}
+         
+          
+          className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
         </div>
+
+
+
         <div>
           <label for="password" className="block text-sm font-medium text-gray-700">Password</label>
-          <input type="password" id="password" name="password" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+          <input type="password" id="password" name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+           className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
         </div>
         <div>
-          <button type="submit" className="w-full bg-blue-900 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign In</button>
+          <button type="submit" onClick={handleLogin} className="w-full bg-blue-900 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign In</button>
         </div>
       </form>
       <div className="mt-4 text-sm text-gray-600 text-center">
