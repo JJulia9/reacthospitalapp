@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import Navigation from "../../components/Navigation";
+
+
 
 // const Login = () => {
 //     const [patient_number, setPatient_number] = useState("");
@@ -49,6 +52,9 @@ const [password, setPassword] = useState("");
 const [parent, setParent] = useState(false);
 const navigate = useNavigate();
 
+const [errorMessage, setErrorMessage] = useState("");
+
+
 const handleLogin = async (e) => {
     e.preventDefault();
     try {   
@@ -63,6 +69,7 @@ const handleLogin = async (e) => {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("email", email); // Store email instead of patient_number
 
+
         if (parent) {
             localStorage.setItem("parent", 'true');
             navigate("/dashboardparent");
@@ -72,6 +79,8 @@ const handleLogin = async (e) => {
         }
     } catch (error) {
         console.error('Login failed', error.response.data.error);
+        setErrorMessage("Invalid email or password. Please try again."); // Set error message
+
     }
 };
 
@@ -82,8 +91,13 @@ useEffect(() => {
     }
 }, []);
 
+
+
   return (
     <>
+
+<Navigation />
+
 
 <div className="flex h-screen">
   
@@ -165,7 +179,8 @@ useEffect(() => {
       <h1 className="text-3xl font-semibold mb-6 text-blue-900 text-center">Sign In</h1>
 
       
- 
+      
+
       <form action="POST" className="space-y-4">
         
 
@@ -213,10 +228,25 @@ useEffect(() => {
                         className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
                     />
                 </div>
+
+                <div>
+                <label  className="inline-flex items-center mt-3" htmlFor="checkbox_id">
+                  <input  className="form-checkbox h-5 w-5 text-gray-600 mr-2 text-blue-900" type="checkbox" id="checkbox_id" checked={parent} onChange={() => setParent(!parent)} />
+                  <span className="text-sm font-medium text-gray-700">Parent/Guardian please select</span>  
+                  </label>
+                </div>
+
                 <div>
                     <button type="submit" onClick={handleLogin} className="w-full bg-blue-900 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign In</button>
                 </div>
       </form>
+
+      {errorMessage && (
+                <div className=" mt-4 text-sm text-red-600 text-center alert alert-danger" role="alert">
+                    {errorMessage}
+                </div>
+            )}
+
       <div className="mt-4 text-sm text-gray-600 text-center">
         <p>Do not have an account? <Link to="/register" className="text-black hover:underline">Register here</Link>
         </p>

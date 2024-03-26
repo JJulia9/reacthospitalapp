@@ -1,13 +1,15 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import CardDepartment from "../../components/CardDepartment";
+import Navigation from "../../components/Navigation";
+
 
 
 
 const Department = () => {
     return (
         <>
-       
+       <Navigation />
    
  <section className="bg-white">
       <div className="py-10 sm:py-16 block lg:py-24 relative bg-opacity-50 z-40">

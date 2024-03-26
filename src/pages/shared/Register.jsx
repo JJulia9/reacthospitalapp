@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import { useState } from 'react';
+import Navigation from "../../components/Navigation";
 
 
 
@@ -35,7 +36,7 @@ const Register = () => {
     
   return (
     <>
-
+<Navigation />
 
 <div className="flex h-screen">
   

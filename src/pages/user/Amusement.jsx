@@ -2,11 +2,14 @@ import React from "react";
 import Footer from "../../components/Footer";
 import CardAmusement from "../../components/CardAmusement";
 import gameData from "../../json/games.json";
+import Navigation from "../../components/Navigation";
 
 
 const Amusement = () => {
     return (
+
         <>
+        <Navigation />
 
             <div className="max-w-xl py-5 mx-8 ">
       <h1 className="font-black text-blue-900 text-4xl mb-4">Welcome back, </h1>

@@ -9,7 +9,8 @@ import DashboardUser from './pages/user/DashboardUser';
 import Contact from './pages/shared/Contact';
 import DepartmentPage from './pages/shared/Department';
 import Amusement from './pages/user/Amusement';
-import Navigation from './components/Navigation';
+import Appointments from './components/Appointments';
+
 
 
 
@@ -24,13 +25,6 @@ function App() {
 
     <Router>
      
-
-<Navigation />
-
-
-
-
-
         <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -42,12 +36,10 @@ function App() {
           <Route path="/departmentPage" element={<DepartmentPage />} />
           <Route path="/amusement" element={<Amusement />} />
 
-          
-       
-         
-       
+          <Route path="/appointments" element={<Appointments />} />
+      
 
-          
+      
         </Routes>
         </main>
     </Router>

@@ -1,6 +1,10 @@
 import React from "react";
 import PSubnav from "../../components/PSubnav";
 import Profile from "../../components/Profile";
+import Navigation from "../../components/Navigation"; 
+import UserInformation from "../../components/UserInformation"; 
+
+
 
 
 
@@ -11,11 +15,15 @@ import Profile from "../../components/Profile";
 
 
 const DashboardParent = () => {
+  const user = UserInformation();
   return (
     <>
- 
+    <Navigation />
+    
+ {user && (
+    <div>
     <div className="max-w-xl py-5 mx-8">
-      <h1 className="font-black text-blue-900 text-4xl mb-4">Welcome back, </h1>
+      <h1 className="font-black text-blue-900 text-4xl mb-4">Welcome back, {user.forename} </h1>
       <p className="text-base text-xl text-[#374151]">Please choose a profile to find more information</p>
     </div>
   
@@ -53,6 +61,8 @@ const DashboardParent = () => {
      
 
   </div>
+  </div>
+  )}
     
     </>
         

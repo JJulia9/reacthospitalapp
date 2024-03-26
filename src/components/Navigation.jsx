@@ -1,15 +1,43 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import UserInformation from "./UserInformation";
+
+
+
 
 const Navigation = () => {
+
+  const user = UserInformation();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isParent, setIsParent] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if the user is logged in by checking if the token exists in local storage
+    const token = localStorage.getItem('token');
+    const parent = localStorage.getItem('parent');
+    if (token) {
+      setIsLoggedIn(true);
+      setIsParent(parent === 'true');
+    } else {
+      setIsLoggedIn(false);
+      setIsParent(false);
+    }
+  }, [location]);
+
+
+
+
     return (
         <>
+
+
 <div className="h-full w-full px-6">
   
   <nav role="navigation" className="bg-white ">
   <div className="flex items-center justify-between">
 
-        <a href="/" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 rounded-md flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
+        <Link to="/" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 rounded-md flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
           <div className="flex items-center">
             <svg id="logo" enable-background="new 0 0 300 300" height="44" viewBox="0 0 300 300" width="43" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g>
@@ -18,7 +46,7 @@ const Navigation = () => {
             </svg>
             <h2 className="hidden sm:block text-base text-gray-700 font-bold leading-normal px-3">The North</h2>
           </div>
-        </a>
+        </Link>
 
         
 <div className='flex md:mr-6 xl:mr-16'>
@@ -59,7 +87,21 @@ const Navigation = () => {
             </Link>
 
 
-            <Link to="/login" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+
+            {isLoggedIn ? (
+                    <>
+                    {user&&(
+                        
+                        <Link to ={isParent ? '/dashboardparent' : '/dashboarduser'} className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+                  <img className="rounded-full h-10 w-10 object-cover" src={user.photo} alt="profilePic" />
+                       </Link>
+                        
+                        )}
+                    
+                    </>
+                ) : (
+                    <>
+                           <Link to="/login" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-l font-medium leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
               <span className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-code" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   
@@ -72,11 +114,13 @@ const Navigation = () => {
               Sign In
             </Link>         
            
+                    </>
+                )}
+
+        
 
            
-            {/* <a href="/dashboardparent" className="focus:text-blue-900 border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
-                  <img className="rounded-full h-10 w-10 object-cover" src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_2.png" alt="logo" />
-               </a> */}
+         
               
             
             </div>
@@ -91,8 +135,6 @@ const Navigation = () => {
    
 </div>
   
-
-
 
 
 

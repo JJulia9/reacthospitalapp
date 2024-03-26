@@ -5,6 +5,13 @@ import UserInformation from "./UserInformation";
 
 const ProfileCard = () => {
     const user = UserInformation()
+    
+    const formatDOB = (dob) => {
+        const formattedDOB = new Date(dob).toLocaleDateString('en-GB');
+        const [day, month, year] = formattedDOB.split('/');
+        return `${day}.${month}.${year}`;
+      }; 
+
     return (
        
 
@@ -37,20 +44,21 @@ const ProfileCard = () => {
                         <div className="px-4 py-2">{user.surname}</div>
                     </div>
                     <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">Gender</div>
-                        <div className="px-4 py-2">Male</div>
+                        <div className="px-4 py-2 font-semibold">Parient Number</div>
+                        <div className="px-4 py-2">{user.patient_number}</div>
                     </div>
                     <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">Contact No.</div>
-                        <div className="px-4 py-2">+11 998001001</div>
+                        <div className="px-4 py-2 font-semibold">Guardian Name</div>
+                        <div className="px-4 py-2">{user.guardian_name}</div>
                     </div>
+
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Current Address</div>
-                        <div className="px-4 py-2">Beech Creek, PA, Pennsylvania</div>
+                        <div className="px-4 py-2">{user.address}</div>
                     </div>
                     <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">Permanent Address</div>
-                        <div className="px-4 py-2">Arlington Heights, IL, Illinois</div>
+                        <div className="px-4 py-2 font-semibold">Phone</div>
+                        <div className="px-4 py-2">{user.phone}</div>
                     </div>
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Email</div>
@@ -60,7 +68,7 @@ const ProfileCard = () => {
                     </div>
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Birthday</div>
-                        <div className="px-4 py-2">{user.dob}</div>
+                        <div className="px-4 py-2">{formatDOB(user.dob)}</div>
                     </div>
                 </div>
             </div>

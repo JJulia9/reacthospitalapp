@@ -1,11 +1,14 @@
 import React from "react";
 import Footer from "../../components/Footer";
+import Navigation from "../../components/Navigation";
+
 
 
 const Home = () => {
   return (
     <>
-   
+  
+    <Navigation />
 
 <div className="w-full h-screen overflow-hidden relative before:block before:absolute before:bg-black before:h-full before:w-full before:top-0 before:left-0 before:z-10 before:opacity-30">
   <img src="https://images.unsplash.com/photo-1587351021821-f871837248c6?q=80&w=2372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="absolute top-0 left-0 min-h-full ob opacity-85 " alt=""/>

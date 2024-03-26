@@ -67,6 +67,7 @@ app.get('/api/users', async (req, res) => {
                 appointment_notes: user.appointment_notes,
                 notes: user.notes,
                 photo: user.photo,
+                isParent: user.isParent,
 
                 department_id: user.department_id ? {
                     name: user.department_id.name,
@@ -103,17 +104,17 @@ res.json(formattedUser);
 // patient login
 app.post('/api/login', async (req, res) => {
   try {
-    const { patient_number, password } = req.body;
-    const user = await User.findOne({ patient_number });
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(401).json({ error: 'Invalid patient number or password' });
+      return res.status(401).json({ error: 'Invalid patient email or password' });
     }
 
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordMatch) {
-      return res.status(401).json({ error: 'Invalid patient number or password' });
+      return res.status(401).json({ error: 'Invalid patient email or password' });
     }
 
     // Include is_admin in the token payload
@@ -121,6 +122,7 @@ app.post('/api/login', async (req, res) => {
       userId: user._id,
     };
 
+    
     const token = jwt.sign(tokenPayload, 'your-secret-key', {
       expiresIn: '1h',
     });
@@ -148,7 +150,7 @@ app.listen(PORT, () => {
 app.post('/api/register', async (req, res) => {
     try {
       // Extract registration data from request body
-      const { email, password, forename, surname, dob, patient_number } = req.body;
+      const { email, password, forename, surname, dob, patient_number} = req.body;
   
       // Check if the user already exists
       const existingUser = await User.findOne({ email });

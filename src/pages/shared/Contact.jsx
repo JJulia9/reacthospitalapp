@@ -1,9 +1,11 @@
 import React from "react";
+import Navigation from "../../components/Navigation";
 
 
 const Contact = () => {
     return (
         <>
+        <Navigation />
 
 
 {/* <hr className="h-px  bg-blue-900 border-0 "/>  */}
