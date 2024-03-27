@@ -1,0 +1,21 @@
+[
+    {
+        "day":"18th",
+        "monthYear":"April,2024",
+        "appointmentName":"Dentist Appointment",
+        "appointmentTime":"10:00 AM - 10:40 AM",
+        "doctor": "Dr. John Doe, General Practitioner",
+        "doctorPhoto": "https://randomuser.me/api/portraits/men/75.jpg"
+    },  
+
+    {
+        "day":"20th",
+        "monthYear":"April,2024",
+        "appointmentName":"Clinical Appointment",
+        "appointmentTime":"12:00 AM - 12:40 AM",
+        "doctor": "Dr. Mike Rob, General Practitioner",
+        "doctorPhoto": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHx8"
+    }
+
+
+]

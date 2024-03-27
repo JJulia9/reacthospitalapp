@@ -44,7 +44,10 @@ app.get('/api/users', async (req, res) => {
       if (err) {
         return res.status(401).json({ error: 'Unauthorized: Invalid token' });
       }
-      const user = await User.findById(decoded.userId).populate('department_id');
+      const user = await User.findById(decoded.userId)
+        .populate('department_id')
+        .populate('doctor_id');
+
 
       // The decoded.userId should match the structure used in jwt.sign during login
 
@@ -85,12 +88,15 @@ app.get('/api/users', async (req, res) => {
                     speciality: user.doctor_id.speciality,
                     department_id: user.doctor_id.department_id,
                     contact: user.doctor_id.contact,
+                    photo: user.doctor_id.photo,
                 } : null,
 
   
   
   // Add any additional fields you want to include
 };
+
+
 
 res.json(formattedUser);
 

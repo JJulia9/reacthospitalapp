@@ -5,14 +5,16 @@ import UserInformation from "./UserInformation";
 
 
 
-const Navigation = () => {
 
-  const user = UserInformation();
+const Navigation = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isParent, setIsParent] = useState(false);
+
+  const user = UserInformation();
   const location = useLocation();
 
   useEffect(() => {
+    console.log("isLoggedIn:", isLoggedIn);
     // Check if the user is logged in by checking if the token exists in local storage
     const token = localStorage.getItem('token');
     const parent = localStorage.getItem('parent');
@@ -23,7 +25,7 @@ const Navigation = () => {
       setIsLoggedIn(false);
       setIsParent(false);
     }
-  }, [location]);
+  }, [location]);//deleted the location to show sign in in navbar
 
 
 

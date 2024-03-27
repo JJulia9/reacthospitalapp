@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 
 
 
@@ -33,7 +33,7 @@ const USubnav = ({onNavigate}) => {
                 Medicine
             </button>
 
-            <button onClick={() => onNavigate('section3')}   className="text-blue-900 font-medium  border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5  hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            <button onClick={() => onNavigate('section4')}   className="text-blue-900 font-medium  border-b-2 border-transparent focus:border-blue-900 flex px-5 items-center py-6 text-sm leading-5  hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
                 Doctors
             </button>
 

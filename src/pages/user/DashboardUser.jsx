@@ -5,6 +5,9 @@ import Facts from "../../components/Facts";
 import UserInformation from "../../components/UserInformation";
 import Navigation from "../../components/Navigation";
 import Appointments from "../../components/Appointments";
+import Medicine from "../../components/Medicine";
+import Doctors from "../../components/Doctors";
+import Amusement from "./Amusement";
 
 
 
@@ -55,9 +58,9 @@ const DashboardUser = () => {
 
 
   {activeSection === 'section2' && <div><Appointments/></div>}
-  {activeSection === 'section3' && <div>Content for Section 3</div>}
-  {activeSection === 'section4' && <div>Content for Section 2</div>}
-  {activeSection === 'section5' && <div>Content for Section 3</div>}
+  {activeSection === 'section3' && <div><Medicine /></div>}
+  {activeSection === 'section4' && <div><Doctors /></div>}
+  {activeSection === 'section5' && <div><Amusement /></div>}
 
 
 

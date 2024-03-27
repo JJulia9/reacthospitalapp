@@ -5,6 +5,13 @@ import Navigation from "../../components/Navigation";
 
 
 
+// ♦ x-ray
+// ♦ MRI
+// ♦ clinics
+// ♦ wards
+// ♦ play areas
+// ♦ surgical theatres
+// ♦ children’s wing map
 
 const Department = () => {
     return (
