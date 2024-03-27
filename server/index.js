@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const User = require('./model/User');
-require('./model/Department');
+const Department= require('./model/Department');
 require('./model/Doctor');
 
 
@@ -123,6 +123,8 @@ app.post('/api/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid patient email or password' });
     }
 
+    
+
     // Include is_admin in the token payload
     const tokenPayload = {
       userId: user._id,
@@ -148,6 +150,19 @@ app.listen(PORT, () => {
 
 
 
+// Define a new route to fetch all departments
+app.get('/api/departments', async (req, res) => {
+  try {
+    // Fetch all departments from the database
+    const departments = await Department.find();
+
+    // Return the list of departments
+    res.json(departments);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 
 //trying to make register page 

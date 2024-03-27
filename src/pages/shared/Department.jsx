@@ -29,13 +29,15 @@ const Department = () => {
                 </p>
               </div>
               <p className="mt-4 text-base leading-relaxed text-gray-600 group-hover:text-white">
-                click on the department you need to view more details
+                click on the department view more details
               </p>
             </div>
             <div className="grid grid-cols-1 gap-2 mt-12 sm:grid-cols-3 lg:mt-20">
-            <CardDepartment />
-            <CardDepartment />
-            <CardDepartment />
+
+            {Departmnet.map((game, index) => (
+            <CardDepartment
+            />
+            ))}
             </div>
           </div>
         </div>

@@ -244,25 +244,7 @@ const Medicine = () => {
                     </div>
                 </div>
                 <div className="md:py-8 py-5 md:px-16 px-5 bg-gray-50 rounded-b">
-{/*                     
-                    <div className="px-4">
-    <div className="border-b pb-4 border-gray-400 border-dashed">
-        <p className="text-xs font-light leading-3 text-gray-500 ">9:00 AM</p>
-        <a tabIndex="0" className="focus:outline-none text-lg font-medium leading-5 text-blue-900 mt-2">Take Medication A</a>
-        <p className="text-sm pt-2 leading-4 leading-none text-gray-600 ">Take 1 pill with water after breakfast</p>
-    </div>
-    <div className="border-b pb-4 border-gray-400 border-dashed pt-5">
-        <p className="text-xs font-light leading-3 text-gray-500 ">12:00 PM</p>
-        <a tabIndex="0" className="focus:outline-none text-lg font-medium leading-5 text-blue-900 mt-2">Take Medication B</a>
-        <p className="text-sm pt-2 leading-4 leading-none text-gray-600 ">Take 2 pills with food</p>
-    </div>
-    <div className="border-b pb-4 border-gray-400 border-dashed pt-5">
-        <p className="text-xs font-light leading-3 text-gray-500 ">19:00 PM</p>
-        <a tabIndex="0" className="focus:outline-none text-lg font-medium leading-5 text-blue-900 mt-2">Take Medication C</a>
-        <p className="text-sm pt-2 leading-4 leading-none text-gray-600 ">Take 1 pill with a glass of water</p>
-    </div>
 
-</div> */}
 
 <div className="px-4">
     <div className="border-b pb-4 border-gray-400 border-dashed flex items-center">
