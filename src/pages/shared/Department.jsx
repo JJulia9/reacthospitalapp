@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../../components/Footer";
 import CardDepartment from "../../components/CardDepartment";
 import Navigation from "../../components/Navigation";
+import DepartmentData from "../../components/DepartmentData";
 
 
 
@@ -14,6 +15,8 @@ import Navigation from "../../components/Navigation";
 // ♦ children’s wing map
 
 const Department = () => {
+  const departments = DepartmentData(); 
+
     return (
         <>
        <Navigation />
@@ -34,10 +37,10 @@ const Department = () => {
             </div>
             <div className="grid grid-cols-1 gap-2 mt-12 sm:grid-cols-3 lg:mt-20">
 
-            {Departmnet.map((game, index) => (
-            <CardDepartment
-            />
-            ))}
+             {departments &&
+                  departments.map((department, index) => (
+                    <CardDepartment key={index} department={department} /> // Pass department data as props
+                  ))}
             </div>
           </div>
         </div>

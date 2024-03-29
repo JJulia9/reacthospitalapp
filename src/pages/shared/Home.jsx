@@ -1,10 +1,56 @@
 import React from "react";
+// import {useState, useEffect} from "react";
+// import { useHistory } from "react-router-dom";
+// import axios from "axios";
 import Footer from "../../components/Footer";
 import Navigation from "../../components/Navigation";
+import { Link } from "react-router-dom";
 
 
 
 const Home = () => {
+
+  //failed code to check if user is logged in and is a kid to redirect on ammusement page
+
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isParent, setIsParent] = useState(false);
+  // const history = useHistory();
+
+  // useEffect(() => {
+  //   const checkUserLogin = async () => {
+  //     try {
+  //       const token = localStorage.getItem('token');
+  //       if (token) {
+  //         setIsLoggedIn(true);
+  //         const response = await axios.get('http://localhost:5000/api/users', {
+  //           headers: {
+  //             Authorization: `Bearer ${token}`,
+  //           },
+  //         });
+  //         setIsParent(response.data.isParent);
+  //       }
+  //     } catch (error) {
+  //       console.error('Error checking user login:', error);
+  //     }
+  //   };
+
+  //   checkUserLogin();
+  // }, []);
+
+  // const handleNext = () => {
+  //   if (isLoggedIn && !isParent) {
+  //     history.push('/amusement');
+  //   } else {
+  //     console.log('User is not logged in or is a parent.');
+  //     // Optionally, you can display a message or take other actions here
+  //   }
+  // };
+
+
+
+
+
+
   return (
     <>
   
@@ -19,10 +65,10 @@ const Home = () => {
       <p className="text-stone-100 text-base">
       Brighten your hospital days with our Portal. From informative content about medical procedures to entertaining games, we've crafted an experience tailored for young minds. Join us in making your health journey not just bearable but enjoyable!
       </p>
-      <a href="/register">
+      <Link to="/register">
       
       <button className="mt-8 text-white uppercase py-4 text-base font-light px-10 border border-white hover:bg-white hover:bg-opacity-10">Sign Up</button>
-      </a>
+      </Link>
     </div>
   </div>
 </div>
@@ -33,7 +79,9 @@ const Home = () => {
       <h2 className="font-black text-sky-950 text-3xl mb-4">Learn more about your body with us  </h2>
       <p className="text-base text-sky-950">Redirecting to the department page to see the instructions for medical treatments and blog.</p>
     </div>
+    <Link to="/login">
     <button className="text-blue-900 uppercase py-3 text-blue-900 px-10 border border-blue-900  hover:bg-blue-900 hover:text-white ">Get started</button>
+    </Link>
   </div>
 </div>
 
@@ -104,7 +152,11 @@ const Home = () => {
         <p className="text-blue-900 text-sm">
           Purus in massa tempor nec. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Faucibus ornare suspendisse sed nisi lacus sed viverra. Diam in arcu cursus euismod quis viverra nibh cras pulvinar.
         </p>
+       
+       <Link
+        to="/login">
         <button className="mt-8 text-blue-900 uppercase py-3 text-sm px-10 border border-blue-900 hover:bg-white hover:bg-opacity-60">Play and Learn</button>
+        </Link> 
       </div>
     </div>
   </div>

@@ -70,6 +70,7 @@ const handleLogin = async (e) => {
         localStorage.setItem("email", email); // Store email instead of patient_number
 
 
+
         if (parent) {
             localStorage.setItem("parent", 'true');
             navigate("/dashboardparent");

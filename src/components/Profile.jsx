@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 const Profile = () => {
   return (
     <>
@@ -12,7 +14,7 @@ const Profile = () => {
                   <div className="text-center my-2">
                             <img class="h-16 w-16 rounded-full"
                                 src="https://cdn.australianageingagenda.com.au/wp-content/uploads/2015/06/28085920/Phil-Beckett-2-e1435107243361.jpg"
-                                alt="" />
+                                alt="profilePicture" />
                   </div>
                   <h3 className="mt-8 text-lg font-semibold text-black group-hover:text-white">Parient name</h3>
                   <p className="mt-2 text-base text-gray-600 group-hover:text-white"> something about person</p>

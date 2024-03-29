@@ -25,7 +25,7 @@ const Navigation = () => {
       setIsLoggedIn(false);
       setIsParent(false);
     }
-  }, [location]);//deleted the location to show sign in in navbar
+  }, [location]);
 
 
 

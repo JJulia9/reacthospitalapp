@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import PSubnav from "../../components/PSubnav";
 import Profile from "../../components/Profile";
 import Navigation from "../../components/Navigation"; 
 import UserInformation from "../../components/UserInformation"; 
+import Appointments from "../../components/Appointments";
+import Medicine from "../../components/Medicine";
+import Doctors from "../../components/Doctors";
+
 
 
 
@@ -16,6 +20,16 @@ import UserInformation from "../../components/UserInformation";
 
 const DashboardParent = () => {
   const user = UserInformation();
+  const [activeSection, setActiveSection] = useState('section1');
+
+  const handleNavigation = (section) => {
+    setActiveSection(section);
+  };
+
+
+
+
+
   return (
     <>
     <Navigation />
@@ -31,27 +45,29 @@ const DashboardParent = () => {
   <div className="bg-tetriady w-full h-screen">
 
     
-  <PSubnav />
+  <PSubnav  onNavigate={handleNavigation}/>
 
 
      
-
+    <div>
+      {activeSection === 'section1' &&
            
             <div className="mx-8 grid grid-cols-1 gap-2 mt-12 sm:grid-cols-3 lg:mt-20">
               
            <Profile />
             <Profile />
-           
+            
+          </div>
 
-          
+      }
 
-            </div>
+{activeSection === 'section2' && <div><Appointments/></div>}
+  {activeSection === 'section3' && <div><Medicine /></div>}
+  {activeSection === 'section4' && <div><Doctors /></div>}
+    </div>
        
-
-  <div>
-
-
-  </div>
+    <div>
+    </div>
  
  
      
