@@ -10,6 +10,7 @@ import Contact from './pages/shared/Contact';
 import DepartmentPage from './pages/shared/Department';
 import Amusement from './pages/user/Amusement';
 import Appointments from './components/Appointments';
+import StoryBoard from './components/StoryBoard';
 
 
 
@@ -26,6 +27,7 @@ function App() {
     <Router>
      
         <main>
+         
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -37,10 +39,13 @@ function App() {
           <Route path="/amusement" element={<Amusement />} />
 
           <Route path="/appointments" element={<Appointments />} />
+
+          <Route path="/storyBoard" element={<StoryBoard />} />
       
 
       
         </Routes>
+        
         </main>
     </Router>
   );
