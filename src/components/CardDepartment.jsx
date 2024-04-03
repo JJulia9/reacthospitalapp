@@ -8,7 +8,7 @@ const CardDepartment = ({department}) => {
   return (
     <>
      
-        <Link to="/storyBoard"
+        <Link to='/storyBoard'
           key={department._id} // Add a unique key prop for each department
           className="transition-all duration-1000 bg-tetriady hover:bg-secondary hover:shadow-xl m-2 p-4 relative z-40 group"
         >

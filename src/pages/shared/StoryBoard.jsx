@@ -1,12 +1,29 @@
 import React from "react";
-import "../assets/storyBoard.css";
+import "../../assets/storyBoard.css";
+import Footer from "../../components/Footer";
+import Navigation from "../../components/Navigation";
+
 
 const StoryBoard = () => {
     
     return (
         <>
+        <Navigation />
+        <section className="bg-white">
+        
+            <div className="max-w-xl mx-auto text-center py-14 mt-6">
+              <div className="inline-flex px-4 py-1.5 mx-auto rounded-full">
+                <p className="font-black text-blue-900 text-3xl">
+                How to prepare for the X-RAY?                </p>
+              </div>
+              <p className="mt-4 text-base leading-relaxed text-gray-600 group-hover:text-white mb-2 text-g uppercase">
+                please read carefully
+              </p>
+            </div>
+       
         <div className="board">
-        <h1 className="font-black text-sky-950 text-3xl mb-4">How to prepare for the X-RAY? </h1>
+
+        <hr class="h-2  bg-green"/>
 
 <ul className="timeline">
 <li>
@@ -76,12 +93,18 @@ const StoryBoard = () => {
         <br /><br />
         </p>
     </li>
+    
 	
 </ul>
+<hr class="h-2  bg-green"/>
+
 </div>
 
 
 
+</section>
+
+<Footer />
 
         </>
     )
