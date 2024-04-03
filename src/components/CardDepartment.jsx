@@ -32,3 +32,4 @@ const CardDepartment = ({department}) => {
 };
 
 export default CardDepartment;
+
