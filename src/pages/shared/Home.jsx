@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 
-  //failed code to check if user is logged in and is a kid to redirect on ammusement page
+  //failed code to check if user is logged in as a kid to redirect on ammusement page
 
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [isParent, setIsParent] = useState(false);
