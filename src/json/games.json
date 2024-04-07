@@ -1,14 +1,26 @@
 [
     {
-        "image": "https://images.unsplash.com/photo-1606167668584-78701c57f13d?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "url": "https://www.cartoonnetwork.co.uk/games/teen-titans-go-battle-with-numbers/play",
-      "name": "Game One",
-      "description": "Good game"
+        "image": "https://images.unsplash.com/photo-1537094082840-dcbbfa99385f?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "url": "https://www.medicinenet.com/human_body_quiz/quiz.htm",
+      "name": "Human Body Quiz ",
+      "description": "Human Body Systems & Organs"
     },
     {
-      "image": "https://images.unsplash.com/photo-1500995617113-cf789362a3e1?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "url": "https://www.cartoonnetwork.co.uk/games/teen-titans-go-battle-with-numbers/play",
-        "name": "Game One",
-        "description": "Good game"
+      "image": "https://images.unsplash.com/photo-1530213786676-41ad9f7736f6?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "url": "https://www.turtlediary.com/game/human-internal-body-parts-labeling.html",
+        "name": "Biology Game",
+        "description": "Human Internal Body Parts Labeling"
+    },
+
+    {
+      "image": "https://images.unsplash.com/photo-1559141866-744efe90686b?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "url": "https://www.turtlediary.com/game/body-parts-word-search.html",
+        "name": "Word Search",
+        "description": "About Body Parts"
     }
+
+
+
+
+
 ]
