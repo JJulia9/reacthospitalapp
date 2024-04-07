@@ -40,7 +40,8 @@ function App() {
 
           <Route path="/appointments" element={<Appointments />} />
 
-          <Route path="/storyBoard" element={<StoryBoard />} />
+          
+          <Route path="/storyBoard/:name" element={<StoryBoard />} />
       
 
       

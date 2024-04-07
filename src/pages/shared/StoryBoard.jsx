@@ -2,28 +2,21 @@ import React from "react";
 import "../../assets/storyBoard.css";
 import Footer from "../../components/Footer";
 import Navigation from "../../components/Navigation";
+import { useParams } from "react-router-dom";
 
 
 const StoryBoard = () => {
-    
-    return (
-        <>
-        <Navigation />
-        <section className="bg-white">
-        
-            <div className="max-w-xl mx-auto text-center py-14 mt-6">
-              <div className="inline-flex px-4 py-1.5 mx-auto rounded-full">
-                <p className="font-black text-blue-900 text-3xl">
-                How to prepare for the X-RAY?                </p>
-              </div>
-              <p className="mt-4 text-base leading-relaxed text-gray-600 group-hover:text-white mb-2 text-g uppercase">
-                please read carefully
-              </p>
-            </div>
-       
-        <div className="board">
+    const { name } = useParams(); // Get department ID from URL params
 
-        <hr class="h-2  bg-green"/>
+
+    
+  // Render content based on department ID
+  const renderContent = () => {
+    switch (name) {
+      case "X-Ray":
+        return (
+          <div className="board">
+             <hr class="h-2  bg-green"/>
 
 <ul className="timeline">
 <li>
@@ -98,17 +91,131 @@ const StoryBoard = () => {
 </ul>
 <hr class="h-2  bg-green"/>
 
-</div>
+
+          </div>
+        );
 
 
 
-</section>
+      case "MRI":
+        return (
+            <div className="board">
+            <hr class="h-2  bg-green"/>
 
-<Footer />
+<ul className="timeline">
+<li>
+       <time datetime="1">1
+       <br/>
+       On the day of your MRI scan, you should be able to eat, <br /> drink and take any medication as usual, <br />unless you're advised otherwise. <br />
+       As the MRI scanner produces strong <br />magnetic fields, it's important to remove any metal <br /> objects from your body.
 
-        </>
-    )
-}
+
+       </time>
+       
+       <p>
+       <br/>
+       <strong>Before the scan</strong>
+       <br/>
+       <br/>
+       </p>
+       
+   </li>
+
+   <li>
+       <time datetime="2">2 <br/>
+       Some MRI scans involve having an injection of contrast agent (dye). <br /> This makes certain tissues and blood vessels show up <br />more clearly and in greater detail.
+       
+       
+        </time>
+      
+       <p> <br/><strong> Contrast agent</strong><br/><br/> </p>
+       
+
+       </li>
+
+       <li>
+       <time datetime="3">3 <br/>
+       An MRI scanner is a short cylinder that's open at both ends. <br /> You'll lie on a motorised bed that's moved inside the scanner. <br />You'll enter the scanner either head first or feet first,<br /> depending on the part of your body being scanned.
+
+       </time>
+      
+       <p>
+       <br/> <strong>During the scan</strong><br/><br/>
+       </p>
+   </li>
+
+   <li>
+       <time datetime="4">
+           4
+           <br />
+           After the scan, you can resume normal activities immediately.  <br />But if you have had a sedative, a friend or relative <br /> will need to take you home and stay with you <br />for the first 24 hours.
+
+It's not safe to drive, <br /> operate heavy machinery or drink alcohol for 24 hours after having a sedative.
+           <br /><br />
+           </time>
+     
+       <p>
+
+           <br />  <strong>After the scan</strong> <br /><br />
+          
+       </p>
+   </li>
+
+
+
+   <li>
+       <time datetime="5">5
+       <br />
+       Meet with your doctor to review the detailed results <br />of the x-ray scan. Discuss the interpretation <br /> of the images, any diagnoses, and proposed treatment plans <br />or next steps. Ensure that you fully understand the findings <br />and recommendations before proceeding with further medical care.
+       </time>
+       
+       <p>
+          <br />
+       <strong>Review of Scan Results</strong>
+       <br /><br />
+       </p>
+   </li>
+   
+   
+</ul>
+<hr class="h-2  bg-green"/>
+
+
+         </div>
+        );
+
+
+      // Add more cases for other departments as needed
+
+
+      default:
+        return null; // Handle invalid department name
+    }
+  };
+
+  
+    return (
+        <>
+        
+      <Navigation />
+      <section className="bg-white">
+        <div className="max-w-xl mx-auto text-center py-14 mt-6">
+          <div className="inline-flex px-4 py-1.5 mx-auto rounded-full">
+            <p className="font-black text-blue-900 text-3xl">
+              How to prepare for the procedure?
+            </p>
+          </div>
+          <p className="mt-4 text-base leading-relaxed text-gray-600 group-hover:text-white mb-2 text-g uppercase">
+            please read carefully
+          </p>
+        </div>
+        {renderContent()}
+      </section>
+      <Footer />
+    </>
+  );
+};
+   
 
 
 export default StoryBoard;
