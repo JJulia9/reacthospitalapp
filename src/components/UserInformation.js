@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const UserInformation = () => {
   const [user, setUser] = useState(null);
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -17,6 +18,7 @@ const UserInformation = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+        
         if (response && response.data) {
           setUser(response.data);
         } else {

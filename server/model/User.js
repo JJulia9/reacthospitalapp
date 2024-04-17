@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
     photo: String,
     patient_number: Number,
     isParent: String,
+    kids:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     department_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Department'},
     doctor_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Doctor'},
    

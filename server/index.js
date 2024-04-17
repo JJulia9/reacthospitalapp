@@ -45,6 +45,7 @@ app.get('/api/users', async (req, res) => {
         return res.status(401).json({ error: 'Unauthorized: Invalid token' });
       }
       const user = await User.findById(decoded.userId)
+        .populate('kids')
         .populate('department_id')
         .populate('doctor_id');
 
@@ -71,6 +72,7 @@ app.get('/api/users', async (req, res) => {
                 notes: user.notes,
                 photo: user.photo,
                 isParent: user.isParent,
+                kids: user.kids,
 
                 department_id: user.department_id ? {
                     name: user.department_id.name,

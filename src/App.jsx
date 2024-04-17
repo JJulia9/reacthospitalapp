@@ -11,6 +11,7 @@ import DepartmentPage from './pages/shared/Department';
 import Amusement from './pages/user/Amusement';
 import Appointments from './components/Appointments';
 import StoryBoard from './pages/shared/StoryBoard';
+import ProfileCard from './components/ProfileCard';
 
 
 
@@ -42,6 +43,9 @@ function App() {
 
           
           <Route path="/storyBoard/:name" element={<StoryBoard />} />
+
+          <Route path="/profileCard/:id" component={ProfileCard} />
+
       
 
       

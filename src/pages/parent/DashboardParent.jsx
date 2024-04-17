@@ -6,6 +6,7 @@ import UserInformation from "../../components/UserInformation";
 import Appointments from "../../components/Appointments";
 import Medicine from "../../components/Medicine";
 import Doctors from "../../components/Doctors";
+import ProfileCard from "../../components/ProfileCard";
 
 
 
@@ -21,6 +22,9 @@ import Doctors from "../../components/Doctors";
 const DashboardParent = () => {
   const user = UserInformation();
   const [activeSection, setActiveSection] = useState('section1');
+
+  const [selectedUserId, setSelectedUserId] = useState(null); // State to track the selected user ID for ProfileCard
+
 
   const handleNavigation = (section) => {
     setActiveSection(section);
@@ -51,13 +55,26 @@ const DashboardParent = () => {
      
     <div>
       {activeSection === 'section1' &&
-           
+          
+          
+            <>
             <div className="mx-8 grid grid-cols-1 gap-2 mt-12 sm:grid-cols-3 lg:mt-20">
+
+
               
+               
            <Profile />
-            <Profile />
+
+
+           
             
           </div>
+
+          <div>
+          {selectedUserId && <ProfileCard userId={selectedUserId} />}
+          </div>
+
+          </>
 
       }
 
